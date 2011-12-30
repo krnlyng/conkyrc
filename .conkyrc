@@ -1,0 +1,82 @@
+# Conky, a system monitor, based on torsmo
+#
+# Any original torsmo code is licensed under the BSD license
+#
+# All code written since the fork of torsmo is licensed under the GPL
+#
+# Please see COPYING for details
+#
+# Copyright (c) 2004, Hannu Saransaari and Lauri Hakkarainen
+# Copyright (c) 2005-2010 Brenden Matthews, Philip Kovacs, et. al. (see AUTHORS)
+# All rights reserved.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+double_buffer yes
+
+own_window yes
+own_window_class Conky
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+
+alignment top_left
+background no
+border_width 1
+cpu_avg_samples 2
+default_color 44AA44
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders no
+draw_outline no
+draw_shades no
+use_xft yes
+xftfont Bitstream Vera Sans Mono:size=7
+gap_x 45
+gap_y 60
+minimum_size 5 5
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+stippled_borders 0
+update_interval 5
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+
+TEXT
+$nodename - $sysname $kernel on $machine
+$hr
+${color 1e90ff}               +                ${color 1e90ff}OS: ${color lightgrey}Arch Linux ${exec uname -m}
+${color 1e90ff}               \#                ${color 1e90ff}Hostname: ${color lightgrey}$nodename
+${color 1e90ff}              \#\#\#               ${color 1e90ff}Uptime: ${color lightgrey}$uptime
+${color 1e90ff}             \#\#\#\#\#              ${color 1e90ff}Kernel: ${color lightgrey}$kernel
+${color 1e90ff}             \#\#\#\#\#\#             ${color 1e90ff}Shell: ${color lightgrey}${exec echo $SHELL}
+${color 1e90ff}            ; \#\#\#\#\#;            ${color 1e90ff}Packages: ${color lightgrey}${exec ls /var/lib/pacman/local/ | wc -l }
+${color 1e90ff}           +\#\#.\#\#\#\#\#            ${color 1e90ff}${exec ~/.conky/wmorde.sh xxx}: ${color lightgrey}${exec ~/.conky/wmorde.sh}
+${color 1e90ff}          +\#\#\#\#\#\#\#\#\#\#           ${color 1e90ff}RAM: ${color lightgrey}$mem / $memmax $membar
+${color 1e90ff}         \#\#\#\#\#\#${color 4682b4}\#\#\#\#\#${color 1e90ff}\#\#;         ${color 1e90ff}CPU: ${color lightgrey}${exec cat /proc/cpuinfo | grep "model name" | head -n 1 | sed 's/^.*: //g' | sed 's/  //g' | sed 's/\@.*$//g'}
+${color 1e90ff}        \#\#\#${color 4682b4}\#\#\#\#\#\#\#\#\#\#\#\#${color 1e90ff}+        ${color 1e90ff}Core 0: ${color lightgrey}speed: ${exec ~/.conky/cpufreq.sh 0 cur}MHz / ${exec ~/.conky/cpufreq.sh 0 max}MHz
+${color 1e90ff}       \#${color 4682b4}\#\#\#\#\#\#   \#\#\#\#\#\#\#        ${color 1e90ff}Core 1: ${color lightgrey}speed: ${exec ~/.conky/cpufreq.sh 1 cur}MHz / ${exec ~/.conky/cpufreq.sh 1 max}MHz
+${color 4682b4}     .\#\#\#\#\#\#;     ;\#\#\#;`".      ${color 1e90ff}CPU Usage: ${color lightgrey}${cpu}%
+${color 4682b4}    .\#\#\#\#\#\#\#;     ;\#\#\#\#\#.       ${color 1e90ff}Boot: ${color lightgrey}${fs_used /boot} / ${fs_size /boot} ${fs_bar 6}
+${color 4682b4}    \#\#\#\#\#\#\#\#\#.   .\#\#\#\#\#\#\#\#`     ${color 1e90ff}Home: ${color lightgrey}${fs_used /home} / ${fs_size /home} ${fs_bar 6}
+${color 4682b4}   \#\#\#\#\#\#'           '\#\#\#\#\#\#    ${color 1e90ff}Root: ${color lightgrey}${fs_used /} / ${fs_size /} ${fs_bar 6}
+${color 4682b4}  ;\#\#\#\#                 \#\#\#\#;   
+${color 4682b4}  \#\#'                     '\#\#   
+${color 4682b4} \#'                         `\#  
