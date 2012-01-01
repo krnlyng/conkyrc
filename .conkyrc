@@ -74,9 +74,9 @@ ${color 1e90ff}         \#\#\#\#\#\#${color 4682b4}\#\#\#\#\#${color 1e90ff}\#\#
 ${color 1e90ff}        \#\#\#${color 4682b4}\#\#\#\#\#\#\#\#\#\#\#\#${color 1e90ff}+        ${color 1e90ff}Core 0: ${color lightgrey}speed: ${exec ~/.conky/cpufreq.sh 0 cur}MHz / ${exec ~/.conky/cpufreq.sh 0 max}MHz
 ${color 1e90ff}       \#${color 4682b4}\#\#\#\#\#\#   \#\#\#\#\#\#\#        ${color 1e90ff}Core 1: ${color lightgrey}speed: ${exec ~/.conky/cpufreq.sh 1 cur}MHz / ${exec ~/.conky/cpufreq.sh 1 max}MHz
 ${color 4682b4}     .\#\#\#\#\#\#;     ;\#\#\#;`".      ${color 1e90ff}CPU Usage: ${color lightgrey}${cpu}%
-${color 4682b4}    .\#\#\#\#\#\#\#;     ;\#\#\#\#\#.       ${color 1e90ff}Boot: ${color lightgrey}${fs_used /boot} / ${fs_size /boot} ${fs_bar 6}
-${color 4682b4}    \#\#\#\#\#\#\#\#\#.   .\#\#\#\#\#\#\#\#`     ${color 1e90ff}Home: ${color lightgrey}${fs_used /home} / ${fs_size /home} ${fs_bar 6}
-${color 4682b4}   \#\#\#\#\#\#'           '\#\#\#\#\#\#    ${color 1e90ff}Root: ${color lightgrey}${fs_used /} / ${fs_size /} ${fs_bar 6}
+${color 4682b4}    .\#\#\#\#\#\#\#;     ;\#\#\#\#\#.       ${color 1e90ff}Boot: ${color lightgrey}${fs_used /boot} / ${fs_size /boot} ${fs_bar 6 /boot}
+${color 4682b4}    \#\#\#\#\#\#\#\#\#.   .\#\#\#\#\#\#\#\#`     ${color 1e90ff}Home: ${color lightgrey}${fs_used /home} / ${fs_size /home} ${fs_bar 6 /home}
+${color 4682b4}   \#\#\#\#\#\#'           '\#\#\#\#\#\#    ${color 1e90ff}Root: ${color lightgrey}${fs_used /} / ${fs_size /} ${fs_bar 6 /}
 ${color 4682b4}  ;\#\#\#\#                 \#\#\#\#;   
 ${color 4682b4}  \#\#'                     '\#\#   
 ${color 4682b4} \#'                         `\#  
